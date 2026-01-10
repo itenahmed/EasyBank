@@ -4,24 +4,23 @@ import jakarta.persistence.*;
 import lombok.*;
 
 
-@Entity @Getter
-@Setter @ToString @NoArgsConstructor @AllArgsConstructor
-public class Accounts extends BaseEntity
-
-{
+@Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class Accounts extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "account_number")
+    @Column(name = "account_number")
     private Long accountNumber;
-@Column(name ="customer-id")
+    @Column(name = "customer-id")
     private long CustomerId;
-@Column(name="account_type")
+    @Column(name = "account_type")
     private String accountType;
-@Column(name = "branch_address")
+    @Column(name = "branch_address")
     private String branchAddress;
-
-
-
 
 
 }

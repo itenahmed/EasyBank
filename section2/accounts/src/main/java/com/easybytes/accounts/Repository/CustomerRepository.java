@@ -3,6 +3,6 @@ package com.easybytes.accounts.Repository;
 import com.easybytes.accounts.Entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer,Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 }
