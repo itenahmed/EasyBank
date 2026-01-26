@@ -4,6 +4,9 @@ import com.easybytes.accounts.Entity.Accounts;
 import com.easybytes.accounts.Entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Accounts, Long> {
+import java.util.Optional;
 
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
+    Optional<Customer> findByMobileNumber(String mobileNumber);
 }

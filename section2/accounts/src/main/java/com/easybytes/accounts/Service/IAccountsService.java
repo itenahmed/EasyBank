@@ -1,7 +1,7 @@
 package com.easybytes.accounts.Service;
 
 
-import dto.CustomerDto;
+import com.easybytes.accounts.dto.CustomerDto;
 
 public interface IAccountsService {
 

@@ -1,7 +1,7 @@
 package com.easybytes.accounts.Mapper;
 
 import com.easybytes.accounts.Entity.Customer;
-import dto.CustomerDto;
+import com.easybytes.accounts.dto.CustomerDto;
 
 public class CustomerMapper {
 
