@@ -20,6 +20,7 @@ public class CustomerMapper {
         customer.setEmail(customerDto.getEmail());
         customer.setName(customerDto.getName());
         customer.setMobileNumber(customerDto.getMobileNumber());
+        customer.setCreatedBy("Admin");
         return customer;
     }
 }

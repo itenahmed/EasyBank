@@ -13,8 +13,8 @@ import lombok.*;
 public class Customer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer-id")
-    private long CustomerId;
+    @Column(name = "customer_id")
+    private Long customerId;
     private String name;
     private String email;
     private String mobileNumber;
