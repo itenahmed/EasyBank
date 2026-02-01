@@ -8,13 +8,14 @@ import com.easybytes.accounts.dto.ResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping(path = "/accounts",produces ={MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
 public class AccountsController {
     private IAccountsService iAccountsService;
@@ -26,4 +27,14 @@ public class AccountsController {
                 .body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201))
                 ;
     }
+@GetMapping("/fetch")
+    public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber) {
+
+      CustomerDto customerDto = iAccountsService.fetchAccountDetails(mobileNumber);
+     return ResponseEntity.status(HttpStatus.OK).body(customerDto);
+    }
+
+
+
 }
+
