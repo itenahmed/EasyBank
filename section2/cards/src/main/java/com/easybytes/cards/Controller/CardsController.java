@@ -31,5 +31,28 @@ public class CardsController {
                 .body(new ResponseDto(CardsConstants.STATUS_201, CardsConstants.MESSAGE_201));
 
     }
+    @GetMapping("/fetch")
+    public ResponseEntity<CardsDto> fetchCard(@RequestParam
+ @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+ String mobileNumber) {
+    CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
+    return ResponseEntity.status(HttpStatus.Ok).body(cardsDto);
+  
+    }
+    @PutMapping("/update")
+    public ResponseEntity<ResponseDto>updateCard(@Valid @RequestBody CardsDto cards){
+        Boolean isUpdated =iCardsService.updateCard(cards);
+        if(isUpdated){
+          return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new ResponseDto(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
+        }else{
+            return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED)
+                    .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_UPDATE));
+        }
+
+    }
+
 
 }
